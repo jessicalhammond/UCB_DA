@@ -1,11 +1,11 @@
 import csv
 import os
-import pandas
-import numpy
+import pandas as pd
+import numpy as np
 
 
 csvpath = os.path.join('raw_data', 'budget_data_1.csv')
-columnsum=numpy.column2('raw_data', 'budget_data_1.csv')
+columnsum = 0
 
 print('Financial Analysis')
 print('_________________________')
@@ -27,8 +27,10 @@ with open(csvpath, newline='') as f:
     f.seek(0)
     
     next(f)
-    print(columnsum[].sum())
-    print("Average Revenue : " + )
+    pd.read_csv(csvpath)
+    columnsum = np.sum(row[1])
+    print(columnsum)
+    print("Average Revenue : ")
 #    max = 0
 #    maxdate = "date"
 #    for row in counter:
