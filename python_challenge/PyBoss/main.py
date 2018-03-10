@@ -10,6 +10,7 @@ last = []
 dob = []
 ssn = []
 state = []
+ssnshort = []
 
 us_state_abbrev = {
     'Alabama': 'AL',
@@ -71,21 +72,30 @@ with open(emp1, 'r') as emp1r:
     csvreader = csv.reader(emp1r, delimiter=',')
     next(csvreader)
     for row in csvreader:
+        
         firstnew,lastnew = row[1].split(' ')
-        first.append([firstnew])
-        last.append([lastnew])
+        first.append(firstnew)
+        last.append(lastnew)
         empid.append(row[0])    
         dob.append(row[2])
-        ssn.append(row[3])
-        state.append(row[4])
-# use list to search for matching key, call value through  dict[key]
-    for key, value in list(us_state_abbrev):
-        if state == key:
-            state = us_state_abbrev[key][1]
+        
+        ssnshort = "***-**-"+row[3].split('-')[2]
+        ssn.append(ssnshort)
+#        ssn.append(row[3])
+#        state.append(row[4])
+
+        # update state  
+        for key in us_state_abbrev:
+            if key == row[4]:
+                stateAB=us_state_abbrev[key]
+#                state.appened(stateAB)
+
+
 #    for row in csvreader:
 #        dob = 
-    for row in csvreader: 
-        ssn = "***-**" + ssn.rsplit("-", 1)
+for item in ssn: 
+    ssnshort = "***-**" + ssn.split("-")[2]
+    ssn.append(ssnshort)
 
 # Zip lists together into tuples
 employees = zip(empid, first, last, dob, ssn, state)
