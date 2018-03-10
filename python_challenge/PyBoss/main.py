@@ -79,7 +79,7 @@ with open(emp1, 'r') as emp1r:
         ssn.append(row[3])
         state.append(row[4])
 # use list to search for matching key, call value through  dict[key]
-    for key in list(us_state_abbrev):
+    for key, value in list(us_state_abbrev):
         if state == key:
             state = us_state_abbrev[key][1]
 #    for row in csvreader:
