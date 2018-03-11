@@ -72,7 +72,6 @@ with open(emp1, 'r') as emp1r:
     csvreader = csv.reader(emp1r, delimiter=',')
     next(csvreader)
     for row in csvreader:
-        
         firstnew,lastnew = row[1].split(' ')
         first.append(firstnew)
         last.append(lastnew)
@@ -83,7 +82,7 @@ with open(emp1, 'r') as emp1r:
         ssn.append(ssnshort)
 #        ssn.append(row[3])
 #        state.append(row[4])
-
+ 
         # update state  
         for key in us_state_abbrev:
             if key == row[4]:
