@@ -10,7 +10,6 @@ last = []
 dob = []
 ssn = []
 state = []
-ssnshort = []
 
 us_state_abbrev = {
     'Alabama': 'AL',
@@ -72,30 +71,57 @@ with open(emp1, 'r') as emp1r:
     csvreader = csv.reader(emp1r, delimiter=',')
     next(csvreader)
     for row in csvreader:
+        #append EMPID 
+        empid.append(row[0]) 
+        
+        #split f/l and append
         firstnew,lastnew = row[1].split(' ')
         first.append(firstnew)
         last.append(lastnew)
-        empid.append(row[0])    
-        dob.append(row[2])
         
-        ssnshort = "***-**-"+row[3].split('-')[2]
-        ssn.append(ssnshort)
-#        ssn.append(row[3])
-#        state.append(row[4])
- 
+        #format date and append
+        year,month,day = row[2].split('-')
+        date = (month + "/" + day + "/" + year)
+        dob.append(date)
+        
+        #format SSN and append
+        one,two,three = row[3].split('-')
+        ssnnew = ("***-**-" + three)
+        ssn.append(ssnnew)
+        
         # update state  
         for key in us_state_abbrev:
             if key == row[4]:
-                stateAB=us_state_abbrev[key]
-#                state.appened(stateAB)
-
-
-#    for row in csvreader:
-#        dob = 
-for item in ssn: 
-    ssnshort = "***-**" + ssn.split("-")[2]
-    ssn.append(ssnshort)
-
+                row[4] = us_state_abbrev[key]
+                state.append(row[4])
+with open(emp2, 'r') as emp2r:
+    csvreader = csv.reader(emp2r, delimiter=',')
+    next(csvreader)
+    for row in csvreader:
+        #append EMPID 
+        empid.append(row[0]) 
+        
+        #split f/l and append
+        firstnew,lastnew = row[1].split(' ')
+        first.append(firstnew)
+        last.append(lastnew)
+        
+        #format date and append
+        year,month,day = row[2].split('-')
+        date = (month + "/" + day + "/" + year)
+        dob.append(date)
+        
+        #format SSN and append
+        one,two,three = row[3].split('-')
+        ssnnew = ("***-**-" + three)
+        ssn.append(ssnnew)
+        
+        # update state  
+        for key in us_state_abbrev:
+            if key == row[4]:
+                row[4] = us_state_abbrev[key]
+                state.append(row[4])
+                
 # Zip lists together into tuples
 employees = zip(empid, first, last, dob, ssn, state)
 
@@ -105,12 +131,7 @@ with open(output, "w", newline="") as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=',')
     # write header row
     csvwriter.writerow(["EmpID", "First","Last","DOB", "SSN", "State"])
+    #write zip employee rows
     csvwriter.writerows(employees)
-#    
-#    csvwriter.writerow([first])
-#    csvwriter.writerow([last]) 
-#    csvwriter.writerow([dob])
-#    csvwriter.writerow([ssn])
-#    csvwriter.writerow([state]) 
-    
+
 
