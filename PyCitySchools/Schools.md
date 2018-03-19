@@ -2603,3 +2603,275 @@ perdist
 </div>
 
 
+
+
+```python
+print("Analysis of school performance based on budget per student doesn't actually appear to have impact on the success of the % passing. If we look at the overall passing in the chart below, the school with the higest percent of overall passing is a school that does not receive the most dollar per student. All schools in the top performing class are Charter schools, however. This may show that Charter schools whether funded exceptionally well or not, perform better than district schools.")
+top_perform.head()
+
+```
+
+    Analysis of school performance based on budget per student doesn't actually appear to have impact on the success of the % passing. If we look at the overall passing in the chart below, the school with the higest percent of overall passing is a school that does not receive the most dollar per student. All schools in the top performing class are Charter schools, however. This may show that Charter schools whether funded exceptionally well or not, perform better than district schools.
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>% Passing Math</th>
+      <th>% Passing Reading</th>
+      <th>Average Math Score</th>
+      <th>Average Reading Score</th>
+      <th>Budget</th>
+      <th>Budget Per Studnet</th>
+      <th>Overall Passing</th>
+      <th>School</th>
+      <th>Total Students</th>
+      <th>Type</th>
+    </tr>
+    <tr>
+      <th>school</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Wilson High School</th>
+      <td>90.932983</td>
+      <td>93.254490</td>
+      <td>83.274201</td>
+      <td>83.989488</td>
+      <td>1319574.0</td>
+      <td>578.0</td>
+      <td>92.093736</td>
+      <td>Ford High School</td>
+      <td>2283</td>
+      <td>Charter</td>
+    </tr>
+    <tr>
+      <th>Pena High School</th>
+      <td>91.683992</td>
+      <td>92.203742</td>
+      <td>83.839917</td>
+      <td>84.044699</td>
+      <td>585858.0</td>
+      <td>609.0</td>
+      <td>91.943867</td>
+      <td>Pena High School</td>
+      <td>962</td>
+      <td>Charter</td>
+    </tr>
+    <tr>
+      <th>Wright High School</th>
+      <td>90.277778</td>
+      <td>93.444444</td>
+      <td>83.682222</td>
+      <td>83.955000</td>
+      <td>1049400.0</td>
+      <td>583.0</td>
+      <td>91.861111</td>
+      <td>Thomas High School</td>
+      <td>1800</td>
+      <td>Charter</td>
+    </tr>
+    <tr>
+      <th>Cabrera High School</th>
+      <td>89.558665</td>
+      <td>93.864370</td>
+      <td>83.061895</td>
+      <td>83.975780</td>
+      <td>1081356.0</td>
+      <td>582.0</td>
+      <td>91.711518</td>
+      <td>Figueroa High School</td>
+      <td>1858</td>
+      <td>Charter</td>
+    </tr>
+    <tr>
+      <th>Holden High School</th>
+      <td>90.632319</td>
+      <td>92.740047</td>
+      <td>83.803279</td>
+      <td>83.814988</td>
+      <td>248087.0</td>
+      <td>581.0</td>
+      <td>91.686183</td>
+      <td>Cabrera High School</td>
+      <td>427</td>
+      <td>Charter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+print("It also appears that the larger the school the lower the overall passing % based on the rank by size chart.")
+persize
+```
+
+    It also appears that the larger the school the lower the overall passing % based on the rank by size chart.
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>% Pass Math</th>
+      <th>% Pass Read</th>
+      <th>Average Math</th>
+      <th>Average Read</th>
+      <th>Overall</th>
+    </tr>
+    <tr>
+      <th>School Size</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Small</th>
+      <td>90.632319</td>
+      <td>92.740047</td>
+      <td>83.814988</td>
+      <td>83.803279</td>
+      <td>91.686183</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>90.698944</td>
+      <td>92.798056</td>
+      <td>83.930728</td>
+      <td>83.595708</td>
+      <td>91.748500</td>
+    </tr>
+    <tr>
+      <th>Large</th>
+      <td>75.082775</td>
+      <td>84.529854</td>
+      <td>82.188448</td>
+      <td>79.624438</td>
+      <td>79.806314</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+print("As was found in the top performing chart, Charter schools outperform District schools across the board.")
+perdist
+```
+
+    As was found in the top performing chart, Charter schools outperform District schools across the board.
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>% Pass Math</th>
+      <th>% Pass Read</th>
+      <th>Average Math</th>
+      <th>Average Read</th>
+      <th>Overall</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Charter</th>
+      <td>90.282106</td>
+      <td>93.152370</td>
+      <td>83.902821</td>
+      <td>83.406183</td>
+      <td>91.717238</td>
+    </tr>
+    <tr>
+      <th>District</th>
+      <td>64.305308</td>
+      <td>78.369662</td>
+      <td>80.962485</td>
+      <td>76.987026</td>
+      <td>71.337485</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
