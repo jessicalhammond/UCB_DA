@@ -31,34 +31,8 @@ rural_avfare = rural_groups['fare'].mean()
 rural_drivercount = (rural_groups['driver_count'].mean())**2
 rural_totalrides = rural_groups['city'].count()
 
-rural_totalrides
+# rural_totalrides
 ```
-
-
-
-
-    city
-    East Leslie             11
-    East Stephen            10
-    East Troybury            7
-    Erikport                 8
-    Hernandezshire           9
-    Horneland                4
-    Jacksonfort              6
-    Kennethburgh            10
-    Kinghaven                6
-    Manuelchester            1
-    Matthewside              4
-    New Johnbury             4
-    North Whitney           10
-    Shelbyhaven              6
-    South Elizabethmouth     5
-    South Joseph            12
-    Stevensport              5
-    West Kevintown           7
-    Name: city, dtype: int64
-
-
 
 
 ```python
@@ -117,11 +91,18 @@ plt.ylabel("Average Fare ($)")
 
 
 ```python
-merged_groupby_data=(merged.groupby(['type']))
-x_axis=merged_groupby_data['ride_id'].count()
-explode = (0,0,0.1)
-colors = ["Gold", "LightSkyBlue", 'LightCoral']
-x_axis.plot(kind='pie',autopct="%1.1f%%", shadow=True,colors=colors, explode=explode, startangle=150)
+
+# # * % of Total Fares by City Type
+
+plt.pie(
+    (merged.groupby(['type'])['ride_id'].count() * 100).sort_index(),
+    explode=[0,0,0.1],
+    colors = ["Gold", "LightSkyBlue", 'LightCoral'],
+    labels =["Rural", 'Suburban', 'Urban'],
+    autopct="%1.1f%%", 
+    shadow=True,
+    startangle=150
+)
 plt.title("% of Total Rides by City Type")
 plt.axis("off")
 ```
@@ -139,12 +120,17 @@ plt.axis("off")
 
 
 ```python
-# * % of Total Fares by City Type
-merged_groupby_data=(merged.groupby(['type']))
-x_axis=merged_groupby_data['fare'].sum()
-explode = (0,0,0.1 )
-colors = ["Gold", "LightSkyBlue", 'LightCoral']
-x_axis.plot(kind='pie',autopct="%1.1f%%", shadow=True,colors=colors,explode=explode, startangle=150)
+# # * % of Total Fares by City Type
+
+plt.pie(
+    (merged.groupby(['type'])['fare'].sum() * 100).sort_index(),
+    explode=[0,0,0.1],
+    colors = ["Gold", "LightSkyBlue", 'LightCoral'],
+    labels =["Rural", 'Suburban', 'Urban'],
+    autopct="%1.1f%%", 
+    shadow=True,
+    startangle=150
+)
 plt.title("% of Total Fares by City Type")
 plt.axis("off")
 ```
@@ -163,11 +149,16 @@ plt.axis("off")
 
 ```python
 # * % of Total Drivers by City Type
-merged_groupby_data=(merged.groupby(['type']))
-x_axis=merged_groupby_data['driver_count'].count()
-explode = (0,0,0.1 )
-colors = ["Gold", "LightSkyBlue", 'LightCoral']
-x_axis.plot(kind='pie',autopct="%1.1f%%", shadow=True,colors=colors, explode=explode, startangle=150)
+# merged_groupby_data=()
+plt.pie(
+    (city.groupby('type')['driver_count'].sum()/city['driver_count'].sum() * 100).sort_index(),
+    explode=[0,0,0.1],
+    colors = ["Gold", "LightSkyBlue", 'LightCoral'],
+    labels =["Rural", 'Suburban', 'Urban'],
+    autopct="%1.1f%%", 
+    shadow=True,
+    startangle=150
+)
 plt.title("% of Total Drivers by City Type")
 plt.axis("off")
 ```
@@ -181,4 +172,18 @@ plt.axis("off")
 
 
 ![png](output_8_1.png)
+
+
+
+```python
+print( "Three observations:")
+print("1. There are far more ubran drivers and riders than any other city type.")
+print("2. Rural Fares are on average most expensive. This would make sense seeing as though there are fewer drivers. With fewer drivers (limited supply), the price will drive upwards depending on demand.")
+print("3. The downward slope of the fare amount to the number of drivers, in whole, supports observation #2, where as drivers increase price decreases. Interestingly, while Rural drivers make up 3% of the total drivers, they represent 6% of the total fares. Further supporting the supply and demand correlation to the ride price.")
+```
+
+    Three observations:
+    1. There are far more ubran drivers and riders than any other city type.
+    2. Rural Fares are on average most expensive. This would make sense seeing as though there are fewer drivers. With fewer drivers (limited supply), the price will drive upwards depending on demand.
+    3. The downward slope of the fare amount to the number of drivers, in whole, supports observation #2, where as drivers increase price decreases. Interestingly, while Rural drivers make up 3% of the total drivers, they represent 6% of the total fares. Further supporting the supply and demand correlation to the ride price.
 
