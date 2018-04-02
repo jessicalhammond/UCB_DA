@@ -8,5 +8,6 @@ Contents
   <li> <a href="HeroesOfPymoli/"> HeroesOfPymoli </a></li>
   <li> <a href="PyBer/">PyBer</a></li>
   <li> <a href="Pymaceuticals/">Pymaceuticals</a></li>
+  <li> <a href="WeatherPy/">WeatherPy</a></li>
   <li> More class assignments.</li></ul>
   
