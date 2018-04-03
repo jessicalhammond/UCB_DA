@@ -92,7 +92,7 @@ cities_df.head()
 
 ```python
 url = "http://api.openweathermap.org/data/2.5/weather?"
-units = "metric"
+units = "imperial"
 
 city_list =[]
 lat_random = []
@@ -117,7 +117,7 @@ len(city_list)
 
 
 
-    810
+    771
 
 
 
@@ -136,7 +136,7 @@ city_name =[]
 
 
 for i, city in enumerate(city_list):
-    query_url = url +"&appid=" + api_key + "&q=" + urllib.request.pathname2url(city)
+    query_url = url +"&appid=" + api_key + "&units="+ units + "&q=" + urllib.request.pathname2url(city)
 #     print(query_url)
     try:
         response = requests.get(query_url).json()
@@ -158,816 +158,777 @@ for i, city in enumerate(city_list):
 
 ```
 
-    Processing Record for serafimovich
-    Processing Record for saint george
-    Processing Record for ati
-    yian Not found
-    jiddah Not found
-    Processing Record for minervino murge
-    Processing Record for tahoua
-    Processing Record for puerto cabezas
-    Processing Record for yaan
-    Processing Record for severo-kurilsk
-    Processing Record for lepaterique
-    Processing Record for midland
-    Processing Record for san cristobal
-    Processing Record for ozinki
-    Processing Record for cockburn town
-    Processing Record for jitotol
-    Processing Record for grindavik
-    Processing Record for hopfgarten
-    Processing Record for pozorice
-    Processing Record for sao filipe
-    Processing Record for tekeli
-    lushunkou Not found
-    Processing Record for tutoia
-    Processing Record for madimba
-    Processing Record for fort frances
-    Processing Record for georgetown
-    Processing Record for thetford mines
-    Processing Record for touba
-    Processing Record for bodden town
-    Processing Record for saryozek
-    Processing Record for general roca
-    Processing Record for zaysan
-    Processing Record for taoudenni
-    Processing Record for cabo san lucas
-    Processing Record for ribeira grande
-    Processing Record for port hedland
-    Processing Record for marzuq
-    Processing Record for nordborg
-    Processing Record for adancata
-    Processing Record for gura sutii
-    Processing Record for porto recanati
-    Processing Record for nurota
-    Processing Record for barillas
-    Processing Record for sinnamary
-    Processing Record for ronne
-    Processing Record for topola
-    Processing Record for horoatu crasnei
-    Processing Record for jalu
-    Processing Record for tekirdag
-    Processing Record for carbonia
-    Processing Record for lysychovo
-    Processing Record for baruun-urt
-    Processing Record for cheyenne
-    Processing Record for truro
-    Processing Record for chapais
-    Processing Record for bulawayo
-    Processing Record for ustka
-    Processing Record for camabatela
-    Processing Record for jaszkarajeno
-    Processing Record for zalantun
-    Processing Record for ofaqim
-    Processing Record for puerto ayora
-    Processing Record for gien
-    Processing Record for adrano
-    Processing Record for bremervorde
-    Processing Record for serebryansk
-    attawapiskat Not found
-    Processing Record for dmytrivka
-    Processing Record for namibe
-    Processing Record for ust-koksa
-    Processing Record for garden city
-    Processing Record for mao
-    Processing Record for guaymas
-    Processing Record for limenaria
-    mericleri Not found
-    marcona Not found
-    Processing Record for puerto leguizamo
-    Processing Record for tabas
-    Processing Record for rebricea
-    juifang Not found
-    Processing Record for hobyo
-    Processing Record for saint anthony
-    Processing Record for guerrero negro
-    Processing Record for sangar
-    Processing Record for aksu
-    Processing Record for lodja
-    Processing Record for dekar
-    Processing Record for bilma
-    Processing Record for bull savanna
-    Processing Record for calatayud
-    Processing Record for kalabo
-    Processing Record for muros
-    Processing Record for beeskow
-    Processing Record for banswada
-    Processing Record for clonakilty
-    Processing Record for sesvete
-    Processing Record for kutum
-    Processing Record for fuyu
-    Processing Record for san jose
-    Processing Record for luba
-    Processing Record for gorokhovets
-    yenisea Not found
-    Processing Record for shelbyville
-    Processing Record for tallahassee
-    Processing Record for havelock
-    raga Not found
-    Processing Record for kaele
-    Processing Record for jasper
-    Processing Record for bathsheba
-    Processing Record for hearst
-    Processing Record for jamestown
-    Processing Record for guarapari
-    Processing Record for nelson
-    Processing Record for orange
-    Processing Record for torbay
-    Processing Record for verkhnevilyuysk
-    Processing Record for porto torres
-    Processing Record for kulevcha
-    Processing Record for morar
-    Processing Record for lock haven
-    Processing Record for cayenne
-    Processing Record for sharjah
-    Processing Record for mahon
-    Processing Record for rantepao
-    Processing Record for batticaloa
-    Processing Record for puerto colombia
-    Processing Record for atar
-    tsihombe Not found
-    Processing Record for tongliao
-    Processing Record for tarut
-    Processing Record for privas
-    chagda Not found
-    Processing Record for altamura
-    uwayl Not found
-    Processing Record for opuwo
-    Processing Record for djambala
-    Processing Record for moravsky beroun
-    Processing Record for miraflores
-    Processing Record for felanitx
-    Processing Record for ponta do sol
-    Processing Record for fort oglethorpe
-    Processing Record for luderitz
-    Processing Record for fjerritslev
-    dibaya Not found
-    Processing Record for chaman
-    bargal Not found
-    Processing Record for iqaluit
-    Processing Record for erenhot
-    Processing Record for stephenville
-    Processing Record for calabar
-    Processing Record for galesong
-    Processing Record for petervasara
-    Processing Record for bumba
-    Processing Record for kendari
-    Processing Record for ife
-    Processing Record for dourbali
-    Processing Record for lakinsk
-    Processing Record for ranghulu
-    Processing Record for surt
-    Processing Record for aksay
-    Processing Record for goure
-    atlantic city Not found
-    Processing Record for concarneau
-    Processing Record for jhargram
-    Processing Record for mishelevka
-    Processing Record for strezhevoy
-    Processing Record for toora-khem
-    Processing Record for mundargi
-    Processing Record for laramie
-    Processing Record for cantapoy
-    Processing Record for bol
-    Processing Record for dafeng
-    urdzhar Not found
-    Processing Record for nalvo
-    Processing Record for afyonkarahisar
-    Processing Record for saldanha
-    boljarovo Not found
-    Processing Record for araouane
-    Processing Record for nador
-    Processing Record for pittsburg
-    Processing Record for coro
-    Processing Record for mecca
-    Processing Record for shahreza
-    Processing Record for celestun
-    Processing Record for hare bay
-    Processing Record for pyskowice
-    Processing Record for zlynka
-    Processing Record for asyut
-    Processing Record for omboue
-    Processing Record for pula
-    Processing Record for lisakovsk
-    Processing Record for stolin
-    Processing Record for new norfolk
-    Processing Record for briancon
-    Processing Record for lang suan
-    Processing Record for mitchell
-    Processing Record for kantang
-    Processing Record for stralsund
-    Processing Record for ayagoz
-    Processing Record for cavarzere
-    Processing Record for jinji
-    Processing Record for zabid
-    Processing Record for biltine
-    Processing Record for korem
-    Processing Record for kidal
-    Processing Record for el campo
-    Processing Record for dengzhou
-    Processing Record for winnemucca
-    Processing Record for pisco
-    Processing Record for sabzevar
-    Processing Record for kars
-    Processing Record for kungurtug
-    Processing Record for alexandroupoli
-    Processing Record for jijiga
-    Processing Record for spas
-    Processing Record for yerofey pavlovich
-    Processing Record for hof
-    Processing Record for riyadh
-    Processing Record for gongzhuling
-    Processing Record for korablino
-    Processing Record for viisoara
-    Processing Record for alta floresta
-    grand river south east Not found
-    Processing Record for puertollano
-    Processing Record for hirara
-    Processing Record for figeac
-    Processing Record for orlik
-    Processing Record for murrhardt
-    Processing Record for qingdao
-    bafra Not found
-    Processing Record for jiutai
-    campineanca Not found
-    Processing Record for ninghai
-    Processing Record for walvis bay
-    Processing Record for jiazi
-    lolua Not found
-    Processing Record for numata
-    cockburn harbour Not found
-    Processing Record for semey
-    Processing Record for warrington
-    Processing Record for fleetwood
-    Processing Record for kerteminde
-    Processing Record for salalah
-    Processing Record for voljevac
-    Processing Record for platanos
-    Processing Record for moussoro
-    eratinon Not found
-    Processing Record for laiyang
-    Processing Record for challakere
-    Processing Record for tessalit
-    Processing Record for fez
-    Processing Record for birao
-    Processing Record for ancud
-    Processing Record for nantucket
-    Processing Record for moose factory
-    Processing Record for longkou
-    Processing Record for khunzakh
-    Processing Record for chunhuhub
-    Processing Record for takab
-    khowst Not found
-    Processing Record for muscle shoals
-    Processing Record for barth
-    Processing Record for paralimni
-    Processing Record for dutse
-    Processing Record for tarquinia
-    Processing Record for masloc
-    Processing Record for teufen
-    Processing Record for botou
-    Processing Record for montbrison
-    Processing Record for indian head
-    Processing Record for oytal
-    Processing Record for davila
-    Processing Record for buracan
-    Processing Record for banyo
-    Processing Record for tuscaloosa
-    Processing Record for west bay
-    Processing Record for ekibastuz
-    Processing Record for baltimore
-    Processing Record for vernon
-    Processing Record for gimli
-    Processing Record for boras
-    Processing Record for champerico
-    kousseri Not found
-    Processing Record for zhuanghe
-    Processing Record for gamba
-    Processing Record for zemio
-    Processing Record for dospat
-    Processing Record for pitsunda
-    Processing Record for fort morgan
-    Processing Record for khani
-    Processing Record for bandarbeyla
-    Processing Record for nikolskoye
-    Processing Record for constitucion
-    Processing Record for rionero in vulture
-    Processing Record for oume
-    Processing Record for west wendover
-    Processing Record for khilok
-    Processing Record for hueyotlipan
-    talah Not found
-    Processing Record for kastrakion
-    Processing Record for arlit
-    Processing Record for methoni
-    Processing Record for husasau de tinca
-    Processing Record for bad ischl
-    Processing Record for nishihara
-    Processing Record for ouadda
-    Processing Record for porto san giorgio
-    Processing Record for rutana
-    Processing Record for los algarrobos
-    Processing Record for strausberg
-    Processing Record for sankt veit
-    Processing Record for abnub
-    Processing Record for gladenbach
-    tulare Not found
-    Processing Record for karpathos
-    guapota Not found
-    Processing Record for weihai
-    Processing Record for sarlat-la-caneda
-    Processing Record for galesti
-    Processing Record for santander
-    Processing Record for obeliai
-    Processing Record for sargatskoye
-    Processing Record for andros town
-    Processing Record for chemax
-    Processing Record for pochutla
-    Processing Record for fasano
-    Processing Record for otavi
-    Processing Record for butaritari
-    Processing Record for krasnomayskiy
-    Processing Record for umea
-    Processing Record for falmouth
-    Processing Record for haghartsin
-    Processing Record for brus laguna
-    Processing Record for vondrozo
-    Processing Record for troyes
-    Processing Record for mont-de-marsan
-    Processing Record for krk
-    Processing Record for jeremie
-    la raya de santa maria Not found
-    Processing Record for doka
-    Processing Record for wadi maliz
-    Processing Record for pirgos
-    Processing Record for gelibolu
-    Processing Record for massakory
-    Processing Record for merrill
-    chikoy Not found
-    Processing Record for kunya
-    Processing Record for san vicente
-    Processing Record for darnah
-    Processing Record for nola
-    dubenskiy Not found
-    Processing Record for sayville
-    Processing Record for denizli
-    Processing Record for douglas
-    Processing Record for aleksandrov gay
-    Processing Record for huntersville
-    Processing Record for termoli
-    Processing Record for mubi
-    Processing Record for wiarton
-    Processing Record for aysha
-    Processing Record for saint-remi
-    Processing Record for adrar
-    Processing Record for celendin
-    Processing Record for ipswich
-    Processing Record for rikitea
-    Processing Record for fairhope
-    Processing Record for kyzyl-suu
-    Processing Record for seoul
-    Processing Record for nata
-    yirol Not found
-    Processing Record for sabang
-    Processing Record for kant
-    Processing Record for elizabeth city
-    Processing Record for morlaix
-    buon me thuot Not found
-    Processing Record for judenburg
-    Processing Record for dickinson
-    Processing Record for mbarara
-    Processing Record for campo maior
-    Processing Record for kielce
-    Processing Record for nucet
-    Processing Record for sigmaringen
-    Processing Record for varhaug
-    Processing Record for kokorevka
-    Processing Record for svetlaya
-    Processing Record for atuona
-    Processing Record for aviles
-    Processing Record for vrchlabi
-    Processing Record for saint-michel-des-saints
-    Processing Record for gandajika
-    Processing Record for chachapoyas
-    Processing Record for liepaja
-    Processing Record for madona
-    Processing Record for naze
-    Processing Record for lompoc
-    Processing Record for pindiga
-    Processing Record for bakchar
-    Processing Record for karatau
-    Processing Record for xinmin
-    Processing Record for crvenka
-    Processing Record for lebedinyy
-    Processing Record for xining
-    Processing Record for burlington
-    Processing Record for genhe
-    Processing Record for katsuura
-    Processing Record for teya
-    Processing Record for karadaglije
-    Processing Record for chaumont
-    Processing Record for cabra
-    Processing Record for winter springs
-    Processing Record for jaslo
-    Processing Record for thompson
-    Processing Record for san patricio
-    Processing Record for lazaro cardenas
-    Processing Record for henties bay
-    Processing Record for amelia
-    Processing Record for prunisor
-    Processing Record for capissayan
-    kashi Not found
-    ivajlovgrad Not found
-    Processing Record for esso
-    Processing Record for lausen
-    Processing Record for kaduna
-    Processing Record for yarada
-    Processing Record for srinivaspur
-    Processing Record for pustomyty
-    Processing Record for yangambi
-    Processing Record for zdzieszowice
-    Processing Record for mwene-ditu
-    Processing Record for daeni
-    Processing Record for agdam
-    Processing Record for carnarvon
-    umm jarr Not found
-    Processing Record for prinos
-    Processing Record for brae
-    Processing Record for sacelu
-    Processing Record for terrace bay
-    yunjinghong Not found
-    Processing Record for puerto lempira
-    Processing Record for hithadhoo
-    Processing Record for dandong
-    Processing Record for ushumun
-    Processing Record for oranjemund
-    Processing Record for yatou
-    Processing Record for sur
-    Processing Record for suraabad
-    Processing Record for kuching
-    Processing Record for weston
-    Processing Record for tecoanapa
-    Processing Record for bosanski samac
-    Processing Record for dong hoi
-    Processing Record for ipixuna
-    Processing Record for josefina
-    Processing Record for lusambo
-    Processing Record for managua
-    Processing Record for geraldton
-    Processing Record for laguna
-    Processing Record for vrangel
-    Processing Record for wukari
-    Processing Record for krasnyy luch
-    Processing Record for najran
-    Processing Record for pontarlier
-    Processing Record for taxiarkhis
-    Processing Record for sadon
-    Processing Record for bara
-    Processing Record for brigantine
-    Processing Record for thunder bay
-    Processing Record for noshiro
-    Processing Record for warri
-    Processing Record for kichera
+    Processing Record for beira
+    Processing Record for bereslavka
+    Processing Record for adre
+    Processing Record for alghero
     wulanhaote Not found
-    Processing Record for taksimo
-    Processing Record for adela
-    achisay Not found
-    Processing Record for kearney
-    Processing Record for longonjo
-    Processing Record for morecambe
-    Processing Record for haian
-    Processing Record for onguday
-    Processing Record for tirat karmel
-    Processing Record for korcula
-    Processing Record for siauliai
-    Processing Record for bredasdorp
-    Processing Record for medina del campo
-    Processing Record for lopatino
-    Processing Record for lublin
-    Processing Record for aberdeen
-    Processing Record for boralday
-    Processing Record for cobh
-    Processing Record for jiblah
-    Processing Record for mimarsinan
-    Processing Record for shihezi
-    litoral del san juan Not found
-    Processing Record for alihe
-    Processing Record for vydrino
-    Processing Record for esperance
-    Processing Record for kunszentmiklos
-    Processing Record for mataura
-    Processing Record for san luis
-    Processing Record for suleja
-    Processing Record for stupino
-    Processing Record for rancho palos verdes
-    Processing Record for xuddur
-    Processing Record for umm kaddadah
-    Processing Record for zhezkazgan
-    Processing Record for kharian
-    Processing Record for jumla
-    Processing Record for nanortalik
-    wa Not found
-    Processing Record for latung
-    Processing Record for coaticook
-    Processing Record for xiongyue
-    Processing Record for augustow
-    tambura Not found
-    Processing Record for salmon arm
-    Processing Record for gumrak
-    Processing Record for jiuquan
-    Processing Record for idah
-    odweyne Not found
-    Processing Record for kavaratti
-    Processing Record for thornbury
-    Processing Record for huanren
-    Processing Record for solaro
-    Processing Record for tvrdosin
-    kalomo Not found
-    Processing Record for desesti
-    Processing Record for chudniv
-    Processing Record for weyburn
-    Processing Record for potam
-    Processing Record for kalety
-    Processing Record for roela
-    Processing Record for otanche
-    Processing Record for kaduqli
-    Processing Record for klyuchi
-    yingzhong Not found
-    Processing Record for nalut
-    Processing Record for marsala
-    Processing Record for zbarazh
-    Processing Record for nawalgarh
-    Processing Record for boissevain
-    Processing Record for coatesville
-    Processing Record for san andres
-    Processing Record for moa
-    villazon Not found
-    Processing Record for looc
-    Processing Record for kabalo
-    Processing Record for kotel
-    Processing Record for marawi
-    Processing Record for fivizzano
-    Processing Record for tumsar
-    Processing Record for rovinj
-    Processing Record for pavlovsk
-    Processing Record for kotovo
-    Processing Record for emmett
-    Processing Record for opatija
-    Processing Record for grasse
-    Processing Record for disraeli
-    Processing Record for faya
-    Processing Record for okha
-    Processing Record for kincardine
-    Processing Record for svarstad
-    Processing Record for airai
-    Processing Record for ginir
-    Processing Record for wajima
-    Processing Record for pomabamba
-    Processing Record for winterberg
-    Processing Record for nanpiao
-    warqla Not found
-    Processing Record for dunmore town
-    Processing Record for hargeysa
-    Processing Record for bangao
-    Processing Record for pervomayskoye
-    Processing Record for great falls
-    palaiokhora Not found
-    Processing Record for basco
-    grande-riviere Not found
+    Processing Record for sabha
+    Processing Record for dzerzhinsk
+    vrina Not found
+    Processing Record for edd
+    Processing Record for palkonda
+    Processing Record for great yarmouth
+    maarianhamina Not found
+    Processing Record for biltine
+    Processing Record for shache
+    Processing Record for guasdualito
+    Processing Record for cabo san lucas
+    Processing Record for mosbach
+    Processing Record for cortes
+    Processing Record for ajaccio
+    Processing Record for peremyshlyany
     Processing Record for pedernales
-    Processing Record for kachiry
-    tingrela Not found
-    Processing Record for bayan
-    Processing Record for lucapa
-    Processing Record for atasu
-    cah ab Not found
-    Processing Record for ergani
-    Processing Record for hami
-    Processing Record for leh
-    Processing Record for remontnoye
-    Processing Record for balao
-    Processing Record for timmins
-    Processing Record for umm lajj
-    Processing Record for sechura
-    Processing Record for kodiak
-    Processing Record for ulagan
-    Processing Record for montana
-    Processing Record for chicama
-    Processing Record for superior
-    Processing Record for jimeta
-    Processing Record for hamilton
-    Processing Record for west fargo
-    Processing Record for emba
-    Processing Record for bubaque
-    Processing Record for palu
-    Processing Record for luanda
-    Processing Record for sioux lookout
-    Processing Record for owo
-    Processing Record for edinet
-    Processing Record for raudeberg
-    Processing Record for sidhi
-    karkaralinsk Not found
-    yiannitsa Not found
-    Processing Record for procida
-    Processing Record for kishtwar
-    Processing Record for beterou
-    Processing Record for roseto degli abruzzi
-    Processing Record for zalakomar
-    bengkulu Not found
-    Processing Record for kermen
-    Processing Record for aldan
-    Processing Record for port talbot
-    Processing Record for matagami
-    Processing Record for yakeshi
-    Processing Record for constantine
-    Processing Record for huty
-    Processing Record for manfredonia
-    Processing Record for mnogovershinnyy
-    Processing Record for nakhon phanom
-    Processing Record for resavica
-    Processing Record for sterling
-    Processing Record for kefalos
-    Processing Record for gat
-    Processing Record for awbari
-    Processing Record for ceska lipa
-    Processing Record for beringovskiy
-    tuggurt Not found
-    Processing Record for balint
-    Processing Record for mambajao
-    Processing Record for yarmouth
-    Processing Record for bolokhovo
-    Processing Record for hall
-    Processing Record for port elizabeth
-    Processing Record for kalmunai
-    Processing Record for matara
-    Processing Record for worthing
-    Processing Record for paita
-    Processing Record for brenham
-    Processing Record for malayal
-    ozgon Not found
-    Processing Record for rotterdam
-    Processing Record for lebu
-    Processing Record for kingston
-    Processing Record for bondeno
-    kapoeta Not found
-    Processing Record for la libertad
-    Processing Record for lafiagi
-    Processing Record for kamiiso
-    Processing Record for tauramena
-    Processing Record for morgaushi
-    Processing Record for mandalgovi
-    Processing Record for borcea
-    tsienyane Not found
-    Processing Record for tahe
-    Processing Record for podu iloaiei
-    Processing Record for ixtapa
-    Processing Record for tomesti
-    Processing Record for keelung
-    Processing Record for cracow
-    Processing Record for tinyahuarco
-    Processing Record for lipari
-    Processing Record for donskoye
-    Processing Record for tibiao
-    Processing Record for asnaes
-    Processing Record for pritzwalk
-    Processing Record for merritt island
-    Processing Record for burdeos
-    Processing Record for naxos
-    Processing Record for gueret
-    Processing Record for deep river
-    Processing Record for nizhniy kuranakh
-    Processing Record for urkut
-    pousat Not found
-    Processing Record for mega
-    navapur Not found
-    Processing Record for kirovohrad
-    Processing Record for revelstoke
-    Processing Record for biak
-    Processing Record for opole
-    Processing Record for pascagoula
-    Processing Record for vyshkovo
-    Processing Record for ogaminana
-    Processing Record for senj
-    Processing Record for navahrudak
-    Processing Record for deoli
-    villa vazquez Not found
-    Processing Record for perehonivka
-    Processing Record for selenginsk
-    Processing Record for lomovka
-    Processing Record for kununurra
-    Processing Record for cache creek
-    Processing Record for moron
-    Processing Record for keflavik
-    Processing Record for wenling
-    Processing Record for hasaki
-    Processing Record for hrubieszow
-    Processing Record for yalta
-    Processing Record for manaure
-    Processing Record for markivka
-    Processing Record for abeche
-    tinjah Not found
-    Processing Record for ust-kan
-    Processing Record for dolinsk
-    Processing Record for karchaghbyur
-    Processing Record for ferme-neuve
-    Processing Record for armenta
-    Processing Record for kingsport
-    Processing Record for key largo
-    Processing Record for buje
-    Processing Record for mayskiy
-    Processing Record for rapid valley
-    Processing Record for dzilam gonzalez
-    Processing Record for zhigansk
-    Processing Record for ormiston
-    Processing Record for villa carmen
-    Processing Record for mongo
-    Processing Record for sarangani
-    Processing Record for aketi
-    Processing Record for bad hofgastein
-    Processing Record for kisangani
-    Processing Record for west lafayette
-    Processing Record for bunesti
-    Processing Record for solotvyn
-    bokspits Not found
-    Processing Record for qeshm
-    Processing Record for tsagan aman
-    Processing Record for plunge
-    Processing Record for santa marta
-    Processing Record for bay roberts
-    Processing Record for kamien pomorski
-    Processing Record for mahebourg
-    Processing Record for quibdo
-    Processing Record for dese
-    Processing Record for saint-denis
-    Processing Record for maumere
-    Processing Record for sauda
-    Processing Record for demir hisar
-    Processing Record for alugan
-    Processing Record for balkhash
-    Processing Record for codrington
-    Processing Record for rafraf
-    Processing Record for kadoshkino
-    Processing Record for dutlwe
-    Processing Record for alexandria
-    Processing Record for granard
-    Processing Record for ishigaki
-    Processing Record for eganville
-    Processing Record for lasa
-    Processing Record for giaginskaya
-    kushmurun Not found
-    Processing Record for zaragoza
-    Processing Record for rokytne
-    skiros Not found
-    Processing Record for novouralsk
-    Processing Record for polunochnoye
-    Processing Record for kushima
-    bardiyah Not found
-    kuche Not found
-    Processing Record for nicoya
-    Processing Record for martinsicuro
-    Processing Record for lerici
-    Processing Record for dunkirk
-    barbar Not found
-    Processing Record for rogatica
-    Processing Record for la grande
-    Processing Record for shawnee
-    Processing Record for beaverlodge
-    Processing Record for suez
-    stoyba Not found
-    Processing Record for pulandian
-    Processing Record for gannan
-    Processing Record for nehe
-    Processing Record for alsfeld
-    Processing Record for frontera
-    Processing Record for brindisi
-    Processing Record for yarumal
-    Processing Record for sokoto
-    Processing Record for port-gentil
-    Processing Record for nenjiang
-    Processing Record for tukums
-    Processing Record for amot
-    Processing Record for tshikapa
-    Processing Record for digras
-    Processing Record for urusha
+    juifang Not found
+    Processing Record for san jose
+    Processing Record for torbay
+    Processing Record for felanitx
+    ketchenery Not found
+    Processing Record for lixourion
     Processing Record for javornik
-    Processing Record for medenychi
-    Processing Record for buenos aires
-    dolbeau Not found
+    Processing Record for bereda
+    Processing Record for marabba
+    Processing Record for quedlinburg
+    Processing Record for itarema
+    Processing Record for brunehaut
+    Processing Record for traverse city
+    ilka Not found
+    Processing Record for kloulklubed
+    Processing Record for athabasca
+    Processing Record for sami
+    Processing Record for wendo
+    Processing Record for zarichne
+    Processing Record for salem
+    Processing Record for adrar
+    Processing Record for jutiquile
+    Processing Record for balasheyka
+    Processing Record for dolhesti
+    Processing Record for thunder bay
+    haibowan Not found
+    Processing Record for jiexiu
+    Processing Record for kahramanmaras
+    Processing Record for piscu vechi
+    Processing Record for baghdad
+    Processing Record for jiuquan
+    Processing Record for san pedro de uraba
+    Processing Record for fukue
+    nyzhnya krynka Not found
+    Processing Record for nikolskoye
+    Processing Record for hami
+    Processing Record for kaseda
+    Processing Record for san patricio
+    Processing Record for suluq
+    Processing Record for jamestown
+    Processing Record for la rioja
+    Processing Record for besancon
+    Processing Record for san angelo
+    Processing Record for oum hadjer
+    Processing Record for krylovskaya
+    Processing Record for svetlaya
+    Processing Record for kamien pomorski
+    hoparta Not found
+    Processing Record for hermagor
+    Processing Record for esperance
+    Processing Record for brezno
+    Processing Record for ivanava
+    Processing Record for tynda
+    Processing Record for esenyurt
+    Processing Record for gat
+    Processing Record for akcaabat
+    Processing Record for broome
+    Processing Record for lyuban
+    Processing Record for kuryk
+    Processing Record for sorso
+    Processing Record for mwinilunga
+    Processing Record for olkhovka
+    Processing Record for kilis
+    Processing Record for faya
+    Processing Record for dicabisagan
+    Processing Record for san pedro
+    Processing Record for pirmasens
+    Processing Record for san esteban
+    Processing Record for denizli
+    Processing Record for den helder
+    Processing Record for nea mesimvria
+    Processing Record for kalawit
+    Processing Record for nikolayevka
+    Processing Record for clonakilty
+    malwan Not found
+    Processing Record for zamosc
+    Processing Record for otukpo
+    Processing Record for weirton
+    Processing Record for kutum
+    Processing Record for luderitz
+    Processing Record for owak
+    Processing Record for vilani
+    Processing Record for skibbereen
+    Processing Record for ribeira grande
+    Processing Record for spasskoye
+    Processing Record for dubno
+    Processing Record for filadelfia
+    sakakah Not found
+    Processing Record for marinette
+    Processing Record for kameshkovo
+    Processing Record for barbastro
+    karkaralinsk Not found
+    Processing Record for havelock
+    Processing Record for mitha tiwana
+    Processing Record for kapaa
+    Processing Record for novotroitskaya
+    saint-honore Not found
+    Processing Record for shetpe
+    Processing Record for puerto ayora
+    Processing Record for kathu
+    Processing Record for kapuskasing
+    Processing Record for ocos
+    Processing Record for chapais
+    Processing Record for taoudenni
+    Processing Record for hauterive
+    marcona Not found
+    Processing Record for mitsamiouli
+    Processing Record for odate
+    Processing Record for bolshaya dzhalga
+    Processing Record for sandominic
+    Processing Record for redmond
+    Processing Record for cockburn town
+    Processing Record for kargasok
+    Processing Record for kalmunai
+    safaga Not found
+    Processing Record for kongoussi
+    karamay Not found
+    Processing Record for henties bay
+    Processing Record for petrovac
+    Processing Record for gorele
+    Processing Record for sorumsand
+    Processing Record for buta
+    Processing Record for koppal
+    Processing Record for kotturu
+    Processing Record for dalhousie
+    Processing Record for mariel
+    Processing Record for bjelovar
+    Processing Record for bilma
+    Processing Record for sidlaghatta
+    Processing Record for kluczbork
+    Processing Record for saldanha
+    Processing Record for tual
+    Processing Record for butaritari
+    attawapiskat Not found
+    Processing Record for kurchum
+    Processing Record for sarahan
+    Processing Record for arlit
+    Processing Record for matagami
+    Processing Record for jaca
+    Processing Record for kaniama
+    Processing Record for dryden
+    Processing Record for atuona
+    Processing Record for appleton
+    Processing Record for saint george
+    Processing Record for misratah
+    gazion Not found
+    Processing Record for beausejour
+    Processing Record for oranjestad
+    Processing Record for bourges
+    Processing Record for saint anthony
+    Processing Record for dubuque
+    Processing Record for pervoye maya
+    Processing Record for wagar
+    Processing Record for iqaluit
+    Processing Record for jalna
+    Processing Record for bad salzungen
+    Processing Record for ilebo
+    Processing Record for peniche
+    Processing Record for tashla
+    zachagansk Not found
+    Processing Record for beihai
+    Processing Record for ekibastuz
+    Processing Record for natitingou
+    Processing Record for ust-kulom
+    Processing Record for aromashevo
+    Processing Record for vanavara
+    Processing Record for costinesti
+    Processing Record for vilyuysk
+    Processing Record for koulikoro
+    Processing Record for la ronge
+    Processing Record for airai
+    Processing Record for schruns
+    Processing Record for erzin
+    Processing Record for luklukan
+    Processing Record for manaure
+    Processing Record for constantine
+    Processing Record for kankakee
+    Processing Record for georgetown
+    Processing Record for brigantine
+    Processing Record for mahon
+    Processing Record for seybaplaya
+    Processing Record for jever
+    Processing Record for malartic
+    Processing Record for fuldatal
+    Processing Record for altay
+    Processing Record for rantepao
+    Processing Record for cabadiangan
+    sapai Not found
+    Processing Record for neverkino
+    bokspits Not found
+    Processing Record for sorab
+    Processing Record for siniscola
+    Processing Record for tire
+    Processing Record for meulaboh
+    Processing Record for wanning
+    Processing Record for siocon
+    Processing Record for aquin
+    Processing Record for lyubuchany
+    Processing Record for tuttlingen
+    bari Not found
+    Processing Record for guantanamo
+    Processing Record for erenhot
+    Processing Record for buluang
+    Processing Record for hithadhoo
+    Processing Record for zuhres
+    Processing Record for drexel heights
+    Processing Record for whitley bay
+    Processing Record for camindangan
+    Processing Record for bestobe
     Processing Record for virginia beach
-    Processing Record for kaniv
-    Processing Record for micheldorf
-    Processing Record for caorle
-    Processing Record for sayyan
-    Processing Record for yashkino
-    Processing Record for ploemeur
-    Processing Record for port blair
-    Processing Record for eau claire
-    Processing Record for cowdenbeath
-    Processing Record for diapaga
-    Processing Record for lincoln
-    Processing Record for russkaya polyana
-    Processing Record for bati
-    Processing Record for inongo
+    Processing Record for shubarshi
+    Processing Record for altoona
+    Processing Record for galle
+    Processing Record for iralaya
+    Processing Record for bethlehem
+    Processing Record for fayetteville
+    Processing Record for kuznetsk
+    Processing Record for okrika
+    Processing Record for umm kaddadah
+    Processing Record for nantucket
+    tlahualilo Not found
+    Processing Record for joshimath
+    Processing Record for kindersley
+    Processing Record for columbia
+    bac lieu Not found
+    Processing Record for kamenka
+    Processing Record for bastia
+    Processing Record for ivybridge
+    Processing Record for apostolove
+    Processing Record for agueda
+    Processing Record for halifax
+    Processing Record for indianola
+    taolanaro Not found
+    Processing Record for gouvy
+    Processing Record for cobadin
+    Processing Record for khani
+    Processing Record for valley city
+    Processing Record for alihe
+    wazzan Not found
+    Processing Record for naze
+    Processing Record for agboville
+    Processing Record for soyo
+    Processing Record for magistralnyy
+    Processing Record for nellikkuppam
+    Processing Record for sarmizegetusa
+    bengkulu Not found
+    Processing Record for nanortalik
+    Processing Record for lubbenau
+    Processing Record for haradok
+    Processing Record for moose factory
+    Processing Record for terrace bay
+    Processing Record for fengcheng
+    Processing Record for marquette
+    Processing Record for kandava
+    Processing Record for espanola
+    Processing Record for wajima
+    Processing Record for burla
+    Processing Record for talbahat
+    Processing Record for balkhash
+    Processing Record for huntington
+    Processing Record for buraydah
+    Processing Record for almaty
+    Processing Record for zaltan
+    Processing Record for zlobin
+    Processing Record for auki
+    Processing Record for tansen
+    Processing Record for fatehpur sikri
+    Processing Record for englewood
+    Processing Record for banikoara
+    Processing Record for ordzhonikidze
+    Processing Record for pignon
+    Processing Record for kachug
+    Processing Record for bueu
+    Processing Record for agadez
+    Processing Record for nowogard
+    Processing Record for morant bay
+    Processing Record for rincon
+    Processing Record for tervel
+    Processing Record for dhampur
+    Processing Record for lesnoy
+    Processing Record for sistranda
+    Processing Record for ashta
+    Processing Record for balabac
+    Processing Record for carpentras
+    Processing Record for veraval
+    Processing Record for zarautz
+    Processing Record for ugoofaaru
+    Processing Record for san rafael del sur
+    Processing Record for kolpny
+    Processing Record for weston
+    Processing Record for abeokuta
+    Processing Record for tsabong
+    Processing Record for marawi
+    Processing Record for hovd
+    sentyabrskiy Not found
+    Processing Record for hollister
+    ye Not found
+    odweyne Not found
+    Processing Record for calabaca
+    Processing Record for vendome
+    Processing Record for canakkale
+    Processing Record for wukari
+    Processing Record for soe
+    iskele Not found
+    qui nhon Not found
+    Processing Record for lomza
+    bargal Not found
+    Processing Record for paoua
+    Processing Record for gurgentepe
+    Processing Record for dori
+    Processing Record for albenga
+    Processing Record for haverfordwest
+    Processing Record for ponta do sol
+    berbera Not found
+    Processing Record for dera ghazi khan
+    Processing Record for shelopugino
+    Processing Record for carman
+    Processing Record for kummersbruck
+    Processing Record for merrill
+    Processing Record for ishigaki
+    Processing Record for bata
+    saryshagan Not found
+    Processing Record for dzierzoniow
+    Processing Record for sarangani
+    Processing Record for clearlake
+    Processing Record for asosa
+    Processing Record for mercedes
+    Processing Record for pula
+    Processing Record for karaton
+    Processing Record for chiang kham
+    Processing Record for baker city
+    kot putli Not found
+    Processing Record for codrington
+    Processing Record for junction city
+    Processing Record for chaumont
+    Processing Record for cotnari
+    Processing Record for marzuq
+    Processing Record for beyneu
+    Processing Record for klyuchi
+    Processing Record for banes
+    Processing Record for zemio
+    Processing Record for cayhagan
+    Processing Record for krosno
+    Processing Record for ikon-khalk
+    Processing Record for borgentreich
+    Processing Record for elhovo
+    Processing Record for alexandroupoli
+    Processing Record for hambantota
+    Processing Record for ginir
+    Processing Record for syedove
+    kuche Not found
+    Processing Record for orsha
+    dzhusaly Not found
+    Processing Record for domat
+    Processing Record for carovigno
+    Processing Record for capreol
+    Processing Record for san quintin
+    Processing Record for rikitea
+    Processing Record for savannah bight
+    Processing Record for mamallapuram
+    Processing Record for laguna
+    Processing Record for waddan
+    Processing Record for pisco
+    Processing Record for mugur-aksy
+    Processing Record for awjilah
+    Processing Record for priiskovyy
+    Processing Record for sestu
+    ndele Not found
+    Processing Record for nynashamn
+    Processing Record for salihorsk
+    Processing Record for calatele
+    Processing Record for ludwigslust
+    dalneye konstantinovo Not found
+    Processing Record for kralendijk
+    Processing Record for garmisch-partenkirchen
+    Processing Record for ati
+    Processing Record for chazuta
+    Processing Record for meaford
+    Processing Record for latung
+    Processing Record for katubao
+    Processing Record for chara
+    Processing Record for havre-saint-pierre
+    tsihombe Not found
+    Processing Record for busselton
+    Processing Record for yatou
+    Processing Record for douglas
+    Processing Record for phalaborwa
+    Processing Record for sinnamary
+    Processing Record for lodja
+    Processing Record for thompson
+    Processing Record for ierapetra
+    Processing Record for mutoko
+    Processing Record for chany
+    Processing Record for beruwala
+    Processing Record for seydi
+    Processing Record for altamont
+    Processing Record for bitkine
+    Processing Record for warrington
+    Processing Record for nadezhda
+    Processing Record for pandan
+    Processing Record for weihai
+    Processing Record for wattegama
+    Processing Record for santo domingo suchitepequez
+    Processing Record for at-bashi
+    Processing Record for siderno
+    Processing Record for ushtobe
+    Processing Record for snyder
+    Processing Record for lefka
+    Processing Record for kysucke nove mesto
+    thermon Not found
+    Processing Record for narovchat
+    Processing Record for acapulco
+    Processing Record for moussoro
+    Processing Record for vezirkopru
+    Processing Record for tuyen quang
+    Processing Record for moa
+    Processing Record for santa marta de tormes
+    Processing Record for tessalit
+    Processing Record for muros
+    Processing Record for harnosand
+    waw Not found
+    Processing Record for pochutla
+    Processing Record for saratovskaya
+    Processing Record for kalemie
+    Processing Record for kruibeke
+    Processing Record for kungurtug
+    Processing Record for ginda
+    Processing Record for aranos
+    Processing Record for birao
+    Processing Record for lienz
+    Processing Record for san vicente
+    Processing Record for penzance
+    kedrovka Not found
+    Processing Record for kholuy
+    Processing Record for high level
+    Processing Record for palaiokomi
+    Processing Record for yelan
+    Processing Record for rankovce
+    Processing Record for les cayes
+    Processing Record for vigia del fuerte
+    Processing Record for okhotsk
+    Processing Record for kerrville
+    Processing Record for navahrudak
+    Processing Record for omaruru
+    Processing Record for guerrero negro
+    Processing Record for moustheni
+    Processing Record for garbsen
+    Processing Record for ayagoz
+    kollumerland Not found
+    Processing Record for burlatskoye
+    Processing Record for bellefontaine
+    Processing Record for saint-tite
+    Processing Record for cefalu
+    Processing Record for namibe
+    Processing Record for mlyniv
+    Processing Record for santander
+    Processing Record for duku
+    Processing Record for kathmandu
+    Processing Record for hilo
+    Processing Record for xifeng
+    Processing Record for peru
+    Processing Record for riyadh
+    Processing Record for veshenskaya
+    Processing Record for mykhaylivka
+    Processing Record for magdagachi
+    Processing Record for kavaratti
+    Processing Record for simao
+    Processing Record for merke
+    Processing Record for talisay
+    Processing Record for bermeo
+    Processing Record for konin
+    Processing Record for bonavista
+    Processing Record for jizan
+    Processing Record for dingle
+    Processing Record for mandalgovi
+    Processing Record for reims
+    Processing Record for bagepalli
+    Processing Record for kevsala
+    Processing Record for katete
+    kilakarai Not found
+    Processing Record for gelnica
+    Processing Record for minot
+    bardiyah Not found
+    Processing Record for lloret de mar
+    Processing Record for abay
+    Processing Record for wajid
+    Processing Record for kerouane
+    Processing Record for christchurch
+    Processing Record for bourbonnais
+    Processing Record for salalah
+    Processing Record for awbari
+    Processing Record for kidal
+    zolotinka Not found
+    Processing Record for hvide sande
+    Processing Record for grenaa
+    Processing Record for lanivtsi
+    Processing Record for ojinaga
+    Processing Record for omboue
+    Processing Record for yining
+    Processing Record for laredo
+    Processing Record for riviere-du-loup
+    Processing Record for dongtai
+    tubruq Not found
+    Processing Record for jalu
+    Processing Record for mao
+    Processing Record for dubrovnik
+    Processing Record for lubao
+    Processing Record for klobuck
+    Processing Record for krasnyy kut
+    astipalaia Not found
+    panjwin Not found
+    Processing Record for ferme-neuve
+    Processing Record for kotovo
+    Processing Record for odolena voda
+    Processing Record for moissala
+    Processing Record for saint-raymond
+    Processing Record for sao filipe
+    Processing Record for kurumkan
+    Processing Record for likhoy
+    Processing Record for geneva
+    Processing Record for aliaga
+    Processing Record for ghanzi
+    Processing Record for verkh-suetka
+    Processing Record for bongandanga
+    Processing Record for ouadda
+    Processing Record for kamskiye polyany
+    Processing Record for gyulahaza
+    Processing Record for constitucion
+    Processing Record for zary
+    Processing Record for la sarre
+    Processing Record for camabatela
+    Processing Record for starkville
+    Processing Record for rockland
+    Processing Record for tignere
+    Processing Record for flin flon
+    Processing Record for viisoara
+    aflu Not found
+    Processing Record for murray bridge
+    Processing Record for torquay
+    Processing Record for kosh-agach
+    Processing Record for gao
+    Processing Record for beterou
+    Processing Record for bondoukou
+    Processing Record for bhuvanagiri
+    Processing Record for rheda-wiedenbruck
+    Processing Record for komnina
+    Processing Record for ayan
+    Processing Record for wielun
+    Processing Record for yurovka
+    Processing Record for lagos
+    Processing Record for damietta
+    Processing Record for kenora
+    Processing Record for narragansett
+    Processing Record for sandpoint
+    Processing Record for el paso
+    Processing Record for matei
+    Processing Record for roblin
+    Processing Record for hoopstad
+    Processing Record for ozerna
+    Processing Record for assen
+    Processing Record for antofagasta
+    Processing Record for lelesti
+    Processing Record for quaregnon
+    Processing Record for boguchar
+    Processing Record for tongliao
+    Processing Record for nenjiang
+    Processing Record for forst
+    Processing Record for salinas
+    Processing Record for tabou
+    Processing Record for lai
+    Processing Record for liliongan
+    Processing Record for sioux lookout
+    Processing Record for bridlington
+    Processing Record for oussouye
+    Processing Record for novi di modena
+    Processing Record for umm lajj
+    Processing Record for lucea
+    Processing Record for bad goisern
+    Processing Record for tumalaytay
+    Processing Record for la baule-escoublac
+    Processing Record for bad wildbad
+    Processing Record for seoul
+    Processing Record for staunton
+    ningan Not found
+    Processing Record for intipuca
+    Processing Record for uyuni
+    Processing Record for troitskoye
+    Processing Record for bathsheba
+    Processing Record for canmore
+    Processing Record for sukhobezvodnoye
+    Processing Record for kampot
+    Processing Record for shenjiamen
+    Processing Record for niquero
+    Processing Record for claremont
+    Processing Record for bassano
+    port-de-paix Not found
+    Processing Record for znamenskoye
+    Processing Record for humboldt
+    Processing Record for zaysan
+    Processing Record for manuk mangkaw
+    Processing Record for warsaw
+    Processing Record for dangtu
+    Processing Record for hearst
+    Processing Record for ornskoldsvik
+    Processing Record for hit
+    Processing Record for movilita
+    Processing Record for dobresti
+    Processing Record for burgos
+    Processing Record for orange walk
+    Processing Record for boa vista
+    Processing Record for hayrabolu
+    Processing Record for puerto quijarro
+    Processing Record for geraldton
+    Processing Record for nikolayevskaya
+    Processing Record for west plains
+    Processing Record for halmstad
+    Processing Record for cogoleto
+    asayita Not found
+    Processing Record for clyde river
+    Processing Record for basco
+    Processing Record for jicin
+    Processing Record for reidsville
+    Processing Record for najran
+    Processing Record for great bend
+    Processing Record for jega
+    Processing Record for bisira
+    Processing Record for bakchar
+    Processing Record for mudigere
+    Processing Record for lykhivka
+    katsiveli Not found
+    Processing Record for harlingen
+    Processing Record for acari
+    Processing Record for guryevsk
+    mouzakion Not found
+    Processing Record for voroshnevo
+    bury saint edmunds Not found
+    Processing Record for tim
+    Processing Record for abyek
+    Processing Record for ogaminana
+    Processing Record for verguleasa
+    Processing Record for sarankhola
+    Processing Record for montesilvano
+    Processing Record for xining
+    Processing Record for atkarsk
+    wahran Not found
+    Processing Record for beipiao
+    Processing Record for abu samrah
+    raga Not found
+    Processing Record for hirara
+    Processing Record for pryozerne
+    Processing Record for mizdah
+    ferai Not found
+    Processing Record for luanda
+    Processing Record for sokoni
+    Processing Record for barvinkove
+    Processing Record for kyzyl-suu
+    Processing Record for kara-tyube
+    Processing Record for boda
+    Processing Record for douentza
+    Processing Record for langsa
+    Processing Record for glasgow
+    Processing Record for maine-soroa
+    Processing Record for aviles
+    Processing Record for korce
+    Processing Record for kon tum
+    gomel Not found
+    Processing Record for dolovo
+    Processing Record for san cristobal
+    Processing Record for savannakhet
+    Processing Record for amambai
+    Processing Record for letlhakane
+    Processing Record for leh
+    Processing Record for canazas
+    Processing Record for lahad datu
+    Processing Record for valparaiso
+    Processing Record for arraial do cabo
+    Processing Record for lang son
+    Processing Record for brunico
+    burica Not found
+    Processing Record for xichang
+    Processing Record for tarcau
+    Processing Record for ghansor
+    acarau Not found
+    Processing Record for cape town
+    Processing Record for puerto wilches
+    Processing Record for gravelbourg
+    Processing Record for imamoglu
+    Processing Record for cam ranh
+    Processing Record for taldan
+    Processing Record for qinhuangdao
+    Processing Record for hamilton
+    Processing Record for xiaoshi
+    Processing Record for wahpeton
+    Processing Record for yakeshi
+    Processing Record for tonekabon
+    Processing Record for toropets
+    Processing Record for xuanhua
+    Processing Record for atbasar
+    Processing Record for kromy
+    Processing Record for darhan
+    Processing Record for sringeri
+    sinkat Not found
+    Processing Record for muskogee
+    Processing Record for varhaug
+    Processing Record for gamba
+    bocaranga Not found
+    Processing Record for naigarhi
+    Processing Record for zhaozhou
+    Processing Record for megion
+    hurghada Not found
+    Processing Record for nouadhibou
+    grand river south east Not found
+    Processing Record for mkokotoni
+    Processing Record for orissaare
+    barbar Not found
+    Processing Record for saint-felicien
+    Processing Record for sterling
+    Processing Record for vavoua
+    Processing Record for darnah
+    Processing Record for giddalur
+    Processing Record for mitchellville
+    Processing Record for coria
+    Processing Record for aku
+    gurgan Not found
+    Processing Record for tahoua
+    Processing Record for tolcsva
+    balykshi Not found
+    Processing Record for vila
+    Processing Record for alcala de henares
+    Processing Record for bossangoa
+    Processing Record for marathon
+    Processing Record for biala podlaska
+    Processing Record for gubkin
+    Processing Record for acajutla
+    Processing Record for scarborough
+    Processing Record for adra
+    Processing Record for sankt margrethen
+    Processing Record for kontagora
+    Processing Record for portobelo
+    Processing Record for vieste
+    Processing Record for ruteng
+    Processing Record for nedumangad
+    Processing Record for malkara
+    Processing Record for iztapa
+    Processing Record for la victoria
+    Processing Record for heidelberg
+    disna Not found
+    Processing Record for winnemucca
+    Processing Record for canton
+    Processing Record for kologriv
 
 
 
@@ -979,7 +940,7 @@ len(maxtemp)
 
 
 
-    740
+    699
 
 
 
@@ -1036,123 +997,123 @@ weather_data.head(10)
   <tbody>
     <tr>
       <th>0</th>
-      <td>Serafimovich</td>
-      <td>56</td>
-      <td>RU</td>
-      <td>94</td>
-      <td>49.58</td>
-      <td>42.73</td>
-      <td>275.531</td>
-      <td>275.531</td>
-      <td>5.81</td>
+      <td>Beira</td>
+      <td>0</td>
+      <td>ES</td>
+      <td>81</td>
+      <td>43.20</td>
+      <td>-8.36</td>
+      <td>51.80</td>
+      <td>49.89</td>
+      <td>8.05</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Saint George</td>
-      <td>20</td>
-      <td>GR</td>
-      <td>61</td>
-      <td>39.45</td>
-      <td>22.34</td>
-      <td>282.150</td>
-      <td>282.150</td>
-      <td>3.60</td>
+      <td>Bereslavka</td>
+      <td>48</td>
+      <td>UA</td>
+      <td>86</td>
+      <td>47.89</td>
+      <td>32.29</td>
+      <td>35.96</td>
+      <td>35.96</td>
+      <td>10.54</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Ati</td>
+      <td>Adre</td>
       <td>0</td>
       <td>TD</td>
-      <td>21</td>
-      <td>13.21</td>
-      <td>18.34</td>
-      <td>296.806</td>
-      <td>296.806</td>
-      <td>4.71</td>
+      <td>20</td>
+      <td>13.47</td>
+      <td>22.20</td>
+      <td>67.28</td>
+      <td>67.28</td>
+      <td>11.21</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Minervino Murge</td>
-      <td>20</td>
+      <td>Alghero</td>
+      <td>0</td>
       <td>IT</td>
-      <td>87</td>
-      <td>41.09</td>
-      <td>16.08</td>
-      <td>281.150</td>
-      <td>281.150</td>
-      <td>4.10</td>
+      <td>76</td>
+      <td>40.56</td>
+      <td>8.32</td>
+      <td>53.60</td>
+      <td>53.60</td>
+      <td>6.93</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Tahoua</td>
+      <td>Sabha</td>
       <td>0</td>
-      <td>NE</td>
-      <td>33</td>
-      <td>14.89</td>
-      <td>5.26</td>
-      <td>293.356</td>
-      <td>293.356</td>
-      <td>2.31</td>
+      <td>LY</td>
+      <td>30</td>
+      <td>27.03</td>
+      <td>14.43</td>
+      <td>66.20</td>
+      <td>66.20</td>
+      <td>11.21</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>Puerto Cabezas</td>
+      <td>Dzerzhinsk</td>
       <td>40</td>
-      <td>NI</td>
-      <td>88</td>
-      <td>14.04</td>
-      <td>-83.39</td>
-      <td>301.150</td>
-      <td>301.150</td>
-      <td>3.10</td>
+      <td>RU</td>
+      <td>69</td>
+      <td>56.24</td>
+      <td>43.46</td>
+      <td>37.40</td>
+      <td>37.40</td>
+      <td>13.42</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>Yaan</td>
-      <td>24</td>
-      <td>NG</td>
-      <td>81</td>
-      <td>7.38</td>
-      <td>8.57</td>
-      <td>299.156</td>
-      <td>299.156</td>
-      <td>5.26</td>
+      <td>Edd</td>
+      <td>0</td>
+      <td>ER</td>
+      <td>53</td>
+      <td>13.93</td>
+      <td>41.69</td>
+      <td>69.26</td>
+      <td>69.26</td>
+      <td>2.71</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>Severo-Kurilsk</td>
-      <td>56</td>
-      <td>RU</td>
-      <td>100</td>
-      <td>50.68</td>
-      <td>156.12</td>
-      <td>271.206</td>
-      <td>271.206</td>
-      <td>3.31</td>
+      <td>Palkonda</td>
+      <td>0</td>
+      <td>IN</td>
+      <td>98</td>
+      <td>18.60</td>
+      <td>83.76</td>
+      <td>68.22</td>
+      <td>68.22</td>
+      <td>3.71</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Lepaterique</td>
-      <td>75</td>
-      <td>HN</td>
-      <td>36</td>
-      <td>14.07</td>
-      <td>-87.47</td>
-      <td>299.150</td>
-      <td>299.150</td>
-      <td>5.10</td>
+      <td>Great Yarmouth</td>
+      <td>88</td>
+      <td>GB</td>
+      <td>93</td>
+      <td>52.61</td>
+      <td>1.73</td>
+      <td>48.20</td>
+      <td>48.20</td>
+      <td>11.41</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>Midland</td>
-      <td>48</td>
-      <td>US</td>
-      <td>33</td>
-      <td>32.00</td>
-      <td>-102.08</td>
-      <td>299.150</td>
-      <td>296.400</td>
-      <td>8.70</td>
+      <td>Biltine</td>
+      <td>0</td>
+      <td>TD</td>
+      <td>18</td>
+      <td>14.53</td>
+      <td>20.93</td>
+      <td>68.81</td>
+      <td>68.81</td>
+      <td>11.77</td>
     </tr>
   </tbody>
 </table>
@@ -1163,11 +1124,11 @@ weather_data.head(10)
 
 ```python
 # Create a scatter plot for each data type
-plt.scatter(weather_data["lat"],weather_data["max temp"], marker="o")
+plt.scatter(weather_data["lat"],weather_data["temp"], marker="o")
 
 # Incorporate the other graph properties: title and axis labels
-plt.title("Max Temperature by Latitude Around the World")
-plt.ylabel("Max Temperature")
+plt.title("Temperature by Latitude Around the World")
+plt.ylabel("Temperature (F)")
 plt.xlabel("Latitude")
 
 # Turn on the grid
