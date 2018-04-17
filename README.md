@@ -9,5 +9,6 @@ Contents
   <li> <a href="PyBer/">PyBer</a></li>
   <li> <a href="Pymaceuticals/">Pymaceuticals</a></li>
   <li> <a href="WeatherPy/">WeatherPy</a></li>
+  <li> <a href="News_Sentiment/">News Sentiment</a></li>
   <li> More class assignments.</li></ul>
   
