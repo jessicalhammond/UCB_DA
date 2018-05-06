@@ -3,7 +3,7 @@ Data Analytics Book Camp Repo
 
 Contents
 <ul>
-  <li> <a href="dataengineering/"> Data Engineering </a></li>
+  <li> <a href="DataEngineering/"> Data Engineering </a></li>
   <li> <a href="python_challenge/"> Python Challenge </a></li>
   <li> <a href="PyCitySchools/"> PyCity Schools</a></li>
   <li> <a href="HeroesOfPymoli/"> HeroesOfPymoli </a></li>
