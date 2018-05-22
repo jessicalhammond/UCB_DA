@@ -6,7 +6,7 @@ import mission
 from flask import Flask, render_template, jsonify, redirect
 from flask_pymongo import PyMongo
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 mongo = PyMongo(app)
 
@@ -14,6 +14,18 @@ mongo = PyMongo(app)
 def index():
     mars_data = mongo.db.mars_data.find_one()
     return render_template("index.html", mars_data=mars_data)
+
+@app.route("/team")
+def team():
+    return render_template("team.html")
+
+@app.route("/stories")
+def stories():
+    return render_template("stories.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 @app.route("/scrape")
 def scraper():

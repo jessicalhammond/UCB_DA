@@ -5,6 +5,7 @@ import pymongo
 import time
 from selenium import webdriver
 from datetime import datetime
+import requests
 
 def init_browser():
     executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
@@ -50,6 +51,7 @@ def scrape():
     # MARS FACTS
     read_mars = pd.read_html('https://space-facts.com/mars/')
     df = pd.DataFrame.to_html(read_mars[0])
+    df = df.replace('\n', '')
     df
     
     print('===================')
