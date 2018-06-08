@@ -6,6 +6,9 @@
 
 // searchBtn.addEventListener('click', executeSearch);
 
+//  create an array for the list of cities, then use d3 
+// to append the list to option elements in drop down.
+var cities = for city in results; 
 
 
 function executeSearch() {
@@ -21,6 +24,7 @@ function executeSearch() {
         var sightingcity = sighting.city.toLowerCase();
         var sightingdate = sighting.datetime.toLowerCase();
         var sightingshape = sighting.shape.toLowerCase();	
+        if sightingstate = 
         return (sightingstate == filtertable||sightingcity == filtertable
             ||sightingcountry == filtertable
             || sightingcity == filtertable

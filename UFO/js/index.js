@@ -1,16 +1,15 @@
 var tbody = document.querySelector("tbody");
-var filterInput = document.querySelector("#filter");
+var global = document.querySelector('#global');
+var datetime = document.querySelector("#date");
+var city = document.querySelector("#city");
+var state = document.querySelector("#state");
+var country = document.querySelector("#country");
+var shape = document.querySelector("#shape");
 var searchBtn = document.querySelector("#searchbtn");
-var td = document.querySelector('td');
-var tr = document.querySelector('tr');
-
 
 searchBtn.addEventListener('click', executeSearch);
 
 var ufodata = dataSetTest;
-
-
-console.log(ufodata)
 
 function makeTable(){
     tbody.innerHTML = "";
@@ -27,23 +26,47 @@ function makeTable(){
 }
 
 function executeSearch() {
-    var filterValue = filterInput.value.trim().toLowerCase();
-    console.log(filterValue);
+    var dateValue = datetime.value.trim().toLowerCase();
+    var cityValue = city.value.trim().toLowerCase();
+    // var stateValue = state.value.trim().toLowerCase();
+    // var countryValue = country.value.trim().toLowerCase();
+    var shapeValue = shape.value.trim().toLowerCase();
+    console.log(dateValue, cityValue);
 
-    tableReturn = dataSetTest.filter(function(sighting) {
-        var date = sighting.datetime.trim().toLowerCase();
-        var city = sighting.city.trim().toLowerCase();
-        var state = sighting.state.trim().toLowerCase();
-        var country = sighting.country.trim().toLowerCase();
-        var shape = sighting.shape.trim().toLowerCase();
-        // var duration = sighting.durationMinutes.trim().toLowerCase();
-        return ( (date == filterValue) &&  (city == filterValue) &&
-        (state == filterValue) && (country == filterValue) && 
-        (shape == filterValue));
+    var tableReturn = dataSetTest.filter(function(sighting) {
+        var dateData = sighting.datetime.trim().toLowerCase();
+        var cityData = sighting.city.trim().toLowerCase();
+        var stateData = sighting.state.trim().toLowerCase();
+        var countryData = sighting.country.trim().toLowerCase();
+        var shapeData = sighting.shape.trim().toLowerCase();
+        if (dateValue && (dateData != dateValue)){
+            return false;
+        }
+        if (cityValue && (cityData != cityValue)) {        
+            return false;
+        }
+        // if (stateValue && (stateData != stateValue)) {
+        //     return false;
+        // }
+        // if (countryValue && (countryData != countryValue)) {
+        //     return false;
+        // }
+        if (shapeValue && (shapeData != shapeValue)) {
+            return false;
+        }
+        return true;
+        // console.log(tablereturn)
+        // console.log(cityValue == sighting.city.trim().toLowerCase()|| cityValue==='')
+        return (dateValue == sighting.datetime.trim().toLowerCase() || dateValue==='') &&
+        (cityValue == sighting.city.trim().toLowerCase()|| cityValue==='') &&
+        (stateValue == sighting.state.trim().toLowerCase() || stateValue==='') &&
+        (countryValue == sighting.country.trim().toLowerCase() || countryValue==='') &&
+        (shapeData==shapeValue|| shapeValue==='');
+        return datetime=== filter
     });
-    // console.log(tableReturn);
     makeTable();
 }
-
 makeTable();
+
+
 
