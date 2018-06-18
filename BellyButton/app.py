@@ -1,5 +1,6 @@
 # Pandas
 import pandas as pd
+import json as json
 
 #flash and jasonify
 from flask import Flask, jsonify, make_response, render_template, redirect
@@ -38,7 +39,9 @@ def otu():
 def metadata(sample_id):
     sample_data = pd.read_csv('Belly_Button_Biodiversity_Metadata.csv')
     sample_return = sample_data.loc[sample_data['SAMPLEID'] == int(sample_id)]
-    json_return = sample_return.to_json(orient='index')
+    json_return = sample_return.to_json(orient='split')
+    del json_return['index']
+    json.dumps(json_return)
     return json_return
 
 @app.route("/wfreq/<sample_id>")

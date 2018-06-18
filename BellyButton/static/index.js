@@ -39,10 +39,12 @@ function getData(sample, callback) {
 // updateMetaData = populaion of data to the panel for metadata
 function makeMetaData(metadata) {
     console.log(metadata['0']["GENDER"])
-    // for (x in metadata['0']) {
-    //     document.getElementById("samplemetadata").innerHTML += x;
-    //     console.log(x["SAMPLEID"])
-    // }
+    document.getElementById("age").innerHTML += metadata['0']["AGE"];
+    document.getElementById("bbtype").innerHTML += metadata['0']["BBTYPE"];
+    document.getElementById("ethnicity").innerHTML += metadata['0']["ETHNICITY"];
+    document.getElementById("gender").innerHTML += metadata['0']["GENDER"];
+    document.getElementById("location").innerHTML += metadata['0']["LOCATION"];
+    document.getElementById("sampleid").innerHTML += metadata['0']["SAMPLEID"];
 };
 
 function optionChanged(newSample){

@@ -40,8 +40,6 @@ function handleSearchButtonClick() {
     ($countryInput.value.trim()===alien.country || $countryInput.value.trim()==='') &&
     ($shapeInput.value.trim()===alien.shape|| $shapeInput.value.trim()==='');
 
-    // If true, add the address to the filteredAddresses, otherwise don't add it to filteredAddresses
-    return datetime=== filter;
   });
   // console.log(filteredAddresses)
   renderTable();

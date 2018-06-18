@@ -26,45 +26,22 @@ function makeTable(){
 }
 
 function executeSearch() {
-    var dateValue = datetime.value.trim().toLowerCase();
-    var cityValue = city.value.trim().toLowerCase();
+    
+    // var dateValue = datetime.value.trim().toLowerCase();
+    // var cityValue = city.value.trim().toLowerCase();
     // var stateValue = state.value.trim().toLowerCase();
     // var countryValue = country.value.trim().toLowerCase();
-    var shapeValue = shape.value.trim().toLowerCase();
-    console.log(dateValue, cityValue);
+    // var shapeValue = shape.value.trim().toLowerCase();
+    console.log(date.value, city.value);
 
     var tableReturn = dataSetTest.filter(function(sighting) {
-        var dateData = sighting.datetime.trim().toLowerCase();
-        var cityData = sighting.city.trim().toLowerCase();
-        var stateData = sighting.state.trim().toLowerCase();
-        var countryData = sighting.country.trim().toLowerCase();
-        var shapeData = sighting.shape.trim().toLowerCase();
-        if (dateValue && (dateData != dateValue)){
-            return false;
-        }
-        if (cityValue && (cityData != cityValue)) {        
-            return false;
-        }
-        // if (stateValue && (stateData != stateValue)) {
-        //     return false;
-        // }
-        // if (countryValue && (countryData != countryValue)) {
-        //     return false;
-        // }
-        if (shapeValue && (shapeData != shapeValue)) {
-            return false;
-        }
-        return true;
-        // console.log(tablereturn)
-        // console.log(cityValue == sighting.city.trim().toLowerCase()|| cityValue==='')
-        return (dateValue == sighting.datetime.trim().toLowerCase() || dateValue==='') &&
-        (cityValue == sighting.city.trim().toLowerCase()|| cityValue==='') &&
-        (stateValue == sighting.state.trim().toLowerCase() || stateValue==='') &&
-        (countryValue == sighting.country.trim().toLowerCase() || countryValue==='') &&
-        (shapeData==shapeValue|| shapeValue==='');
-        return datetime=== filter
+        return (datetime.value.trim()===sighting.datetime || datetime.value.trim()==='') &&
+        (city.value.trim()===sighting.city|| city.value.trim()==='') &&
+        (state.value.trim()===sighting.state || state.value.trim()==='') &&
+        (country.value.trim()===sighting.country || country.value.trim()==='') &&
+        (shape.value.trim()===sighting.shape|| shape.value.trim()==='');
     });
-    makeTable();
+    makeTable(tableReturn);
 }
 makeTable();
 
