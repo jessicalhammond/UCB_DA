@@ -141,7 +141,6 @@ d3.csv("/assets/data/data.csv", function(err, dataSet) {
     data.four = +data.four;
     data.more5 = +data.more5;
     data.none = +data.none;
-    data.Abbr = +data.Abbr;
 
     console.log(data.Abbr)
   });
@@ -173,18 +172,23 @@ d3.csv("/assets/data/data.csv", function(err, dataSet) {
     .data(dataSet)
     .enter()
     .append("circle")
-    .text(function(d){return d.Abbr;})
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
     .attr("cy", d => yLinearScale(d[chosenYAxis]))
     .attr("r", 20)
-    .attr("fill", "pink")
-    .attr("opacity", ".5");
+    .attr("fill", "blue")
+    .attr("opacity", ".75");
 
-  circlesGroup.append("text")
-    .text(function(d) { return d.city; })
-    // .attr("cx", d => xLinearScale(d[chosenXAxis]))
-    // .attr("cy", d => yLinearScale(d[chosenYAxis]))
-    .attr('color', 'black');
+  // append text
+  // var circlesGroup = chartGroup.selectAll("text.abbr")
+  // .data(dataSet)
+  // .enter()
+  // .append("text")
+  // .text(d => d.Abbr)
+  // .attr("dx", d => xLinearScale(d[chosenXAxis]))
+  // .attr("dy", d => yLinearScale(d[chosenYAxis]))
+  // .style("font", "10px sans serif")
+  // .style("text-align", 'middle')
+  // .style("fill", "black")
 
   // Create group for  2 x and y - axis labels
   var labelsGroupX = chartGroup.append("g")
